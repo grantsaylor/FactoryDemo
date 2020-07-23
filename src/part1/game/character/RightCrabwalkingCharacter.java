@@ -10,22 +10,22 @@ public class RightCrabwalkingCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 0;
+        return 30;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return 20;
     }
 
     @Override
     public String getName() {
-        return null;
+        return "rightcrabwalking";
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return Color.MAGENTA;
     }
 
     public BufferedImage getImage() throws IOException {

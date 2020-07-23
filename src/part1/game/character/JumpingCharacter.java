@@ -10,25 +10,25 @@ public class JumpingCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 0;
+        return 60;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return 60;
     }
 
     @Override
     public String getName() {
-        return null;
+        return "jumping";
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return Color.orange;
     }
 
     public BufferedImage getImage() throws IOException {
-        return ImageIO.read(new File("standing.png"));
+        return ImageIO.read(new File("jumping.png"));
     }
 }

@@ -10,22 +10,22 @@ public class RightCrawlingCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 0;
+        return 20;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return 20;
     }
 
     @Override
     public String getName() {
-        return null;
+        return "rightcrawling";
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return Color.green;
     }
 
     public BufferedImage getImage() throws IOException {

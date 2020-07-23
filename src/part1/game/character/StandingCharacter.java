@@ -10,22 +10,22 @@ public class StandingCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 0;
+        return 30;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return 60;
     }
 
     @Override
     public String getName() {
-        return null;
+        return "standing";
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return Color.black;
     }
 
     public BufferedImage getImage() throws IOException {
