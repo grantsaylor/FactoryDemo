@@ -10,12 +10,12 @@ public class RightCrawlingCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 20;
+        return 599;
     }
 
     @Override
     public int getHeight() {
-        return 20;
+        return 592;
     }
 
     @Override

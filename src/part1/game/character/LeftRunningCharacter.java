@@ -10,12 +10,12 @@ public class LeftRunningCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 30;
+        return 599;
     }
 
     @Override
     public int getHeight() {
-        return 60;
+        return 592;
     }
 
     @Override

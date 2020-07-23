@@ -10,12 +10,12 @@ public class SittingCharacter implements Character{
 
     @Override
     public int getWidth() {
-        return 45;
+        return 599;
     }
 
     @Override
     public int getHeight() {
-        return 45;
+        return 592;
     }
 
     @Override

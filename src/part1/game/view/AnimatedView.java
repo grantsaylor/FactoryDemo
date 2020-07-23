@@ -21,8 +21,6 @@ import java.io.*;
 public class AnimatedView extends JFrame implements GameView {
 
     //Our avatar
-    private JPanel northPnl = new JPanel();
-    private JLabel stateLbl = new JLabel();
     private CharacterFactory characterFactory;
     private Character currentCharacter;
     private JPanel centerPnl = new JPanel();
@@ -32,36 +30,20 @@ public class AnimatedView extends JFrame implements GameView {
     //Create the frame
     public AnimatedView() {
         music();
-//        characterFactory = new CharacterFactory();
-//        northPnl.add(stateLbl);
-//        stateLbl.setFont(new Font("Arial", Font.BOLD, 40));
-//        add(northPnl, BorderLayout.NORTH);
-//        add(centerPnl, BorderLayout.CENTER);
-//        add(stateLbl);
-//        setTitle("Animated View");
-//        getContentPane().setBackground(Color.white);
-//        setPreferredSize(new Dimension(1080, 1050));
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        setVisible(true);
-//        setResizable(true);
-//
-//        try {
-//            setIconImage(ImageIO.read(new File("icon.png")));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        pack();
-//        setLocationRelativeTo(null);
-//
         characterFactory = new CharacterFactory();
-
-        northPnl.add(stateLbl);
-        stateLbl.setFont(new Font("Arial", Font.BOLD, 40));
-        add(northPnl, BorderLayout.NORTH);
+        setTitle("Animated View");
+        getContentPane().setBackground(Color.white);
         add(centerPnl, BorderLayout.CENTER);
-        setPreferredSize(new Dimension(600,200));
+        getContentPane().setBackground(Color.white);
+        setPreferredSize(new Dimension(1080, 620));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+        setResizable(false);
+        try {
+            setIconImage(ImageIO.read(new File("icon.png")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         pack();
         setLocationRelativeTo(null);
     }
@@ -77,26 +59,17 @@ public class AnimatedView extends JFrame implements GameView {
         updateView();
     }
 
-
     private void updateView() {
-
         Graphics g = centerPnl.getGraphics();
         g.clearRect(0, 0, centerPnl.getWidth(), centerPnl.getHeight());
         centerPnl.setDoubleBuffered(true);
-
         try {
             g.drawImage(currentCharacter.getImage(), x, 50, currentCharacter.getWidth(), currentCharacter.getHeight(), this);
-
         } catch (IOException e) {
             g.setColor(currentCharacter.getColor());
             g.fillRect(x, 50, currentCharacter.getWidth(), currentCharacter.getHeight());
         }
-
-
-        stateLbl.setText(currentCharacter.getName().toUpperCase());
-
     }
-
 
     public void music() {
         try {

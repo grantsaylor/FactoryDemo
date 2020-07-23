@@ -6,9 +6,9 @@ ASSIGNMENT: ASSIGNMENT 3 PART 1
 DATE: 7/17/2020
  */
 
-import part1.game.GameModel;
 import part1.game.state.*;
 import part1.game.view.GameView;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -24,7 +24,7 @@ public class GameController implements KeyListener, Observer {
 
 
     //Constructor
-    public GameController(GameModel model, GameView view ) {
+    public GameController(GameModel model, GameView view) {
         this.model = model;
         this.view = view;
         view.addGameKeyListener(this);
@@ -68,7 +68,7 @@ public class GameController implements KeyListener, Observer {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-        }else if(model.gameState.getName().equals("jumping")){
+        } else if (model.gameState.getName().equals("jumping")) {
             try {
                 updateView();
             } catch (IOException ioException) {
@@ -100,18 +100,18 @@ public class GameController implements KeyListener, Observer {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
-        if(model.getGameState() instanceof JumpingState){
-                int delay = 500; //milliseconds
-                ActionListener taskPerformer = e1 -> {
-                    try {
-                        model.setGameState(new StandingState());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                };
-                Timer timer = new Timer(delay, taskPerformer);
-                timer.setRepeats(false);
-                timer.start();
+        if (model.getGameState() instanceof JumpingState) {
+            int delay = 500; //milliseconds
+            ActionListener taskPerformer = e1 -> {
+                try {
+                    model.setGameState(new StandingState());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            };
+            Timer timer = new Timer(delay, taskPerformer);
+            timer.setRepeats(false);
+            timer.start();
         }
     }
 }

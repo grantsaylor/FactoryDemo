@@ -10,12 +10,12 @@ public class JumpingCharacter implements Character {
 
     @Override
     public int getWidth() {
-        return 60;
+        return 599;
     }
 
     @Override
     public int getHeight() {
-        return 60;
+        return 995;
     }
 
     @Override
